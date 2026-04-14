@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100,200,300,400,500,600,700,800,900');
+@import "tailwindcss";
+
+:root {
+    --text: #ffffff;
+    --bg: #0c1116;
+    --secondary: #0a0d11;
+    --additional: #141921;
+    --border: #121c25;
+    --gray: #4e5761;
+    --primary: #87c2fa;
+}
+
+* {
+    font-family: 'Onest', Arial, Helvetica, sans-serif;
+}
+
+html {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+@theme {
+    --color-text: var(--text);
+    --color-bg: var(--bg);
+    --color-secondary: var(--secondary);
+    --color-additional: var(--additional);
+    --color-border: var(--border);
+    --color-gray: var(--gray);
+    --color-primary: var(--primary);
+}
