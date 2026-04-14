@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { LayoutIcon, TicketIcon, Users2Icon, PanelRightCloseIcon, PanelRightOpenIcon } from "@lucide/vue";
+import { LayoutIcon, TicketIcon, Users2Icon, PanelLeftCloseIcon, PanelLeftOpenIcon } from "@lucide/vue";
 
 const route = useRoute();
 const isCollapsed = ref(false);
@@ -19,9 +19,9 @@ console.log(route.path);
                 <IconsLogosFull v-if="!isCollapsed" />
                 <IconsLogosMini class="size-6 max-h-6 shrink-0 mt-0.75" v-else />
             </NuxtLink>
-            <button @click="isCollapsed = !isCollapsed" class="mt-1 text-gray hover:scale-102 cursor-pointer shrink-0 focus:text-primary">
-                <PanelRightCloseIcon v-if="!isCollapsed" class="size-4.5" />
-                <PanelRightOpenIcon v-if="isCollapsed" class="size-4.5" />
+            <button @click="isCollapsed = !isCollapsed" class="mt-1 text-gray hover:scale-102 cursor-pointer shrink-0 active:text-primary">
+                <PanelLeftCloseIcon v-if="!isCollapsed" class="size-4.5" />
+                <PanelLeftOpenIcon v-if="isCollapsed" class="size-4.5" />
             </button>
         </div>
         <hr class="h-0.5 w-full border-border" />
