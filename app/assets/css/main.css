@@ -20,6 +20,10 @@ html {
     color: var(--text);
 }
 
+button {
+    outline: none;
+}
+
 @theme {
     --color-text: var(--text);
     --color-bg: var(--bg);

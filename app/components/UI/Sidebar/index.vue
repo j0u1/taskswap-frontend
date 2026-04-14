@@ -15,18 +15,14 @@ console.log(route.path);
 <template>
     <aside class="h-screen flex flex-col gap-4 w-2/12 duration-200 transition-all" :class="{ 'w-21': isCollapsed }">
         <div class="flex justify-between items-center pt-4" :class="[isCollapsed ? 'pl-4 pr-2 pb-1' : 'px-4']">
-            <IconsLogosFull v-if="!isCollapsed" />
-            <IconsLogosMini class="size-6 max-h-6 shrink-0 mt-0.75" v-else />
-            <PanelRightCloseIcon
-                v-if="!isCollapsed"
-                @click="isCollapsed = !isCollapsed"
-                class="size-4.5 text-gray hover:scale-102 cursor-pointer shrink-0 mt-1"
-            />
-            <PanelRightOpenIcon
-                v-if="isCollapsed"
-                @click="isCollapsed = !isCollapsed"
-                class="size-4.5 text-gray hover:scale-102 cursor-pointer shrink-0 mt-1"
-            />
+            <NuxtLink class="duration-300 transition-all active:scale-105" to="/">
+                <IconsLogosFull v-if="!isCollapsed" />
+                <IconsLogosMini class="size-6 max-h-6 shrink-0 mt-0.75" v-else />
+            </NuxtLink>
+            <button @click="isCollapsed = !isCollapsed" class="mt-1 text-gray hover:scale-102 cursor-pointer shrink-0 focus:text-primary">
+                <PanelRightCloseIcon v-if="!isCollapsed" class="size-4.5" />
+                <PanelRightOpenIcon v-if="isCollapsed" class="size-4.5" />
+            </button>
         </div>
         <hr class="h-0.5 w-full border-border" />
         <div class="space-y-3.5 px-3">
