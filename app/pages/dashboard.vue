@@ -1,11 +1,11 @@
 <script setup lang="ts">
 definePageMeta({
     layout: "sidebar",
+    pageTitle: "Обзор",
 });
 </script>
 
 <template>
-    <DashboardHeading />
     <DashboardProblems />
     <div class="flex gap-6">
         <UICard>
