@@ -1,6 +1,23 @@
+<script setup lang="ts">
+definePageMeta({
+    layout: "sidebar",
+});
+</script>
+
 <template>
-    <div class="flex bg-bg">
-        <UISidebar />
-        <section class="p-4 lg:p-6 duration-300 transition-all w-full rounded-xl my-2 mr-2 border border-border"></section>
+    <DashboardHeading />
+    <DashboardProblems />
+    <div class="flex gap-6">
+        <UICard>
+            <p class="uppercase text-gray">Последние проблемы</p>
+            <div class="flex flex-col gap-4">
+                <div class="text-sm flex justify-between p-4 border border-border rounded-lg">
+                    <div class="flex gap-4">
+                        <span class="uppercase text-gray">прб-0042</span>
+                        <p class="text-light-gray max-w-100 truncate">Не работает внутренний прокси, после обновления Windows</p>
+                    </div>
+                </div>
+            </div>
+        </UICard>
     </div>
 </template>

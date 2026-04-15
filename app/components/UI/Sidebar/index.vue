@@ -1,27 +1,33 @@
 <script lang="ts" setup>
-import { LayoutIcon, Users2Icon, PanelLeftCloseIcon, PanelLeftOpenIcon, TriangleAlertIcon } from "@lucide/vue";
+import { Layout, Users2, PanelLeftClose, PanelLeftOpen, TriangleAlert } from "@lucide/vue";
 
 const route = useRoute();
 const isCollapsed = ref(false);
 const pages = [
-    { title: "Панель управления", path: "/dashboard", icon: LayoutIcon },
-    { title: "Проблемы", path: "/tickets", icon: TriangleAlertIcon },
-    { title: "Сотрудники", path: "/employees", icon: Users2Icon },
+    { title: "Панель управления", path: "/dashboard", icon: Layout },
+    { title: "Проблемы", path: "/tickets", icon: TriangleAlert },
+    { title: "Сотрудники", path: "/employees", icon: Users2 },
 ];
 
 console.log(route.path);
 </script>
 
 <template>
-    <aside class="h-screen flex flex-col gap-4 duration-200 transition-all" :class="[ isCollapsed ? 'w-19.75' : 'w-2/12 min-w-56' ]">
-        <div class="relative flex justify-between items-center pt-6 pb-3.5 duration-300 transition-all" :class="[isCollapsed ? 'px-4 pb-1' : 'px-4']">
+    <aside class="h-screen flex flex-col gap-4 duration-200 transition-all" :class="[isCollapsed ? 'w-19.75' : 'w-2/12 min-w-56']">
+        <div
+            class="relative flex justify-between items-center pt-6 duration-300 transition-all"
+            :class="[isCollapsed ? 'px-4 pb-3.5' : 'px-4 pb-2']"
+        >
             <NuxtLink class="duration-300 transition-all active:scale-105" :class="[isCollapsed ? 'mx-auto' : 'mx-0']" to="/">
                 <IconsLogosFull v-if="!isCollapsed" />
                 <IconsLogosMini class="size-6 max-h-6 shrink-0" v-else />
             </NuxtLink>
-            <button @click="isCollapsed = !isCollapsed" class="absolute -right-4 bg-bg border border-border p-1.5 rounded-full text-gray hover:scale-102 cursor-pointer shrink-0 active:text-primary">
-                <PanelLeftCloseIcon v-if="!isCollapsed" class="size-4.5" />
-                <PanelLeftOpenIcon v-if="isCollapsed" class="size-4.5" />
+            <button
+                @click="isCollapsed = !isCollapsed"
+                class="absolute -right-4 bg-bg border border-border p-1.5 rounded-full text-gray hover:scale-102 cursor-pointer shrink-0 active:text-primary"
+            >
+                <PanelLeftClose v-if="!isCollapsed" class="size-4.5" />
+                <PanelLeftOpen v-if="isCollapsed" class="size-4.5" />
             </button>
         </div>
         <hr class="h-0.5 w-full border-border" />
@@ -44,8 +50,9 @@ console.log(route.path);
                 <span
                     class="duration-200 transition-all origin-left"
                     :class="[isCollapsed ? 'scale-0 absolute opacity-0' : 'relative scale-100']"
-                    >{{ page.title }}</span
                 >
+                    {{ page.title }}
+                </span>
             </NuxtLink>
         </div>
     </aside>
