@@ -1,3 +1,3 @@
 <template>
-    <section class="bg-bg"></section>
+    <section></section>
 </template>

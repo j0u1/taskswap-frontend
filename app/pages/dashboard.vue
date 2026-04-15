@@ -8,8 +8,7 @@ definePageMeta({
 <template>
     <DashboardProblems />
     <div class="flex gap-6">
-        <UICard>
-            <p class="uppercase text-gray">Последние проблемы</p>
+        <UICard title="Последние проблемы">
             <div class="flex flex-col gap-4">
                 <div class="text-sm flex justify-between p-4 border border-border rounded-lg">
                     <div class="flex gap-4">
@@ -19,5 +18,6 @@ definePageMeta({
                 </div>
             </div>
         </UICard>
+        <UICard> </UICard>
     </div>
 </template>
