@@ -4,9 +4,9 @@ import { Layout, Users2, PanelLeftClose, PanelLeftOpen, TriangleAlert } from "@l
 const route = useRoute();
 const isCollapsed = ref(false);
 const pages = [
-    { title: "Панель управления", path: "/dashboard", icon: Layout },
+    { title: "Обрзор", path: "/dashboard", icon: Layout },
     { title: "Проблемы", path: "/tickets", icon: TriangleAlert },
-    { title: "Сотрудники", path: "/employees", icon: Users2 },
+    { title: "Команда", path: "/employees", icon: Users2 },
 ];
 
 console.log(route.path);

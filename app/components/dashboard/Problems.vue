@@ -6,7 +6,7 @@ const problemsSection = [
         color: "primary",
     },
     {
-        title: "Проблем",
+        title: "Проблемы",
         count: 2,
         color: "red",
     },
