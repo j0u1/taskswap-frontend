@@ -20,7 +20,7 @@ console.log(route.path);
         <div class="relative flex justify-between items-center duration-300 transition-all">
             <NuxtLink
                 class="duration-300 transition-all active:scale-105"
-                :class="[isCollapsed ? 'mx-auto pt-7.5 pb-4' : 'mx-4 pt-6.75 pb-2.5']"
+                :class="[isCollapsed ? 'mx-auto pt-6.5 pb-4' : 'mx-4 pt-6.75 pb-2.5']"
                 to="/"
             >
                 <IconsLogosFull v-if="!isCollapsed" />
