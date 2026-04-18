@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { padding } from "~/data/dynamicStyles";
 import { pages } from "~/data/pages";
 
 const route = useRoute();
@@ -19,22 +20,30 @@ console.log(route.path);
                 v-for="page in pages"
                 :key="page.title"
                 :to="page.path"
-                class="flex items-center gap-2 text-gray rounded-lg px-3 py-2.25 font-medium duration-200 transition-all whitespace-nowrap relative border"
+                class="flex items-center gap-2 text-gray rounded-lg font-medium duration-200 transition-all whitespace-nowrap relative border"
                 :class="[
                     route.path === page.path
                         ? 'border-transparent bg-secondary text-light-gray cursor-default'
                         : 'border-secondary hover:border-primary hover:text-primary',
                     isCollapsed ? 'size-12.75' : '',
+                    padding,
                 ]"
             >
                 <component
                     :is="page.icon"
                     class="shrink-0 duration-300 transition-all"
-                    :class="[isCollapsed ? 'size-5 mx-auto my-2' : 'size-4.5', route.path === page.path && 'delay-100']"
+                    :class="[
+                        isCollapsed ? 'size-5 mx-auto my-2' : 'size-4.5',
+                        route.path === page.path && 'delay-100',
+                    ]"
                 />
                 <span
                     class="duration-200 transition-all origin-left"
-                    :class="[isCollapsed ? 'scale-0 absolute opacity-0' : 'relative scale-100']"
+                    :class="[
+                        isCollapsed
+                            ? 'scale-0 absolute opacity-0'
+                            : 'relative scale-100',
+                    ]"
                 >
                     {{ page.title }}
                 </span>

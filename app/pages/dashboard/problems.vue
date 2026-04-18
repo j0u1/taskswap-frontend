@@ -34,7 +34,7 @@ useHead({
 </script>
 
 <template>
-    <UICard class="border-0 px-0 py-0" :button="{ boolean: true, text: 'Добавить новую проблему' }" :icon="PlusIcon">
+    <UICard :button="{ boolean: true, text: 'Добавить новую проблему' }" :icon="PlusIcon" :noBorder="true">
         <DashboardProblems />
     </UICard>
 </template>
