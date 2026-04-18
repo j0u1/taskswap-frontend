@@ -1,0 +1,40 @@
+<script lang="ts" setup>
+import { PlusIcon } from "@lucide/vue";
+
+definePageMeta({
+    layout: "sidebar",
+    pageTitle: "Проблемы",
+});
+
+const seoTitle = "Проблемы // TaskSwap";
+const seoDescription =
+    "Раздел TaskSwap с актуальными проблемами, статусами, приоритетами и последними инцидентами для быстрой работы команды.";
+
+useSeoMeta({
+    title: seoTitle,
+    description: seoDescription,
+    ogTitle: seoTitle,
+    ogDescription: seoDescription,
+    ogType: "website",
+    ogSiteName: "TaskSwap",
+    ogLocale: "ru_RU",
+    twitterCard: "summary",
+    twitterTitle: seoTitle,
+    twitterDescription: seoDescription,
+    robots: "noindex, nofollow, noarchive",
+    keywords: "TaskSwap, проблемы, инциденты, тикеты, статусы, приоритеты, решения, dashboard, support, task management",
+});
+
+useHead({
+    htmlAttrs: {
+        lang: "ru",
+    },
+    meta: [{ name: "theme-color", content: "#101012" }],
+});
+</script>
+
+<template>
+    <UICard class="border-0 px-0 py-0" :button="{ boolean: true, text: 'Добавить новую проблему' }" :icon="PlusIcon">
+        <DashboardProblems />
+    </UICard>
+</template>
