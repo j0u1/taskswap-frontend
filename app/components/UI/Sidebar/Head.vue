@@ -1,12 +1,14 @@
 <script setup>
 import { PanelLeftClose, PanelLeftOpen } from "@lucide/vue";
 
-const props = defineProps({
+defineProps({
     isCollapsed: {
         type: Boolean,
         default: false,
     },
 });
+
+const emit = defineEmits(["toggle"]);
 </script>
 
 <template>
@@ -20,7 +22,7 @@ const props = defineProps({
             <IconsLogosMini class="size-6 max-h-6 shrink-0" v-else />
         </NuxtLink>
         <button
-            @click="isCollapsed = !isCollapsed"
+            @click="emit('toggle')"
             class="absolute -right-4 -bottom-8 bg-bg border border-border p-1.5 rounded-full text-gray hover:scale-102 cursor-pointer shrink-0 active:text-primary"
         >
             <PanelLeftClose v-if="!isCollapsed" class="size-4.5" />
