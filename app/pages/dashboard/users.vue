@@ -20,8 +20,7 @@ useSeoMeta({
     twitterTitle: seoTitle,
     twitterDescription: seoDescription,
     robots: "noindex, nofollow, noarchive",
-    keywords:
-        "TaskSwap, участники, команда, сотрудники, пользователи, роли, ответственность, загрузка, dashboard, team",
+    keywords: "TaskSwap, участники, команда, сотрудники, пользователи, роли, ответственность, загрузка, dashboard, team",
 });
 
 useHead({
