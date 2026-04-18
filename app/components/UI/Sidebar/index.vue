@@ -4,14 +4,16 @@ import { pages } from "~/data/pages";
 
 const route = useRoute();
 const isCollapsed = ref(false);
+
+console.log(route.path);
 </script>
 
 <template>
     <aside
-        class="h-screen flex flex-col gap-4 duration-300 transition-all border-r border-border"
+        class="relative h-screen flex flex-col gap-4 duration-300 transition-all border-r border-border"
         :class="[isCollapsed ? 'w-19.75' : 'w-2/12 min-w-56']"
     >
-        <UISidebarHead :is-collapsed="isCollapsed" @toggle="isCollapsed = !isCollapsed" />
+        <UISidebarHead :is-collapsed="isCollapsed" />
         <hr class="h-0.5 w-full border-border" />
         <div class="space-y-3.5 px-3" :class="[isCollapsed && 'w-fit']">
             <NuxtLink
@@ -46,6 +48,16 @@ const isCollapsed = ref(false);
                     {{ page.title }}
                 </span>
             </NuxtLink>
+        </div>
+        <div
+            class="absolute bottom-4 left-4 right-4 border border-border rounded-lg flex items-center gap-2.5"
+            :class="padding"
+        >
+            <UserAvatar :size="10" />
+            <div>
+                <p>Дмитрий Иванов</p>
+                <p class="text-sm text-light-gray">Сетевой отдел</p>
+            </div>
         </div>
     </aside>
 </template>
